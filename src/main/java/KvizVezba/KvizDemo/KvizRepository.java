@@ -6,6 +6,4 @@ import java.util.Optional;
 
 @Repository
 public interface KvizRepository extends JpaRepository<Pitanje, Long> {
-    @Query("SELECT s FROM KvizTable s WHERE s.id =?1")
-    Optional<Pitanje>findStudentByEmail(String email);
 }

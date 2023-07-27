@@ -1,5 +1,6 @@
 package KvizVezba.KvizDemo;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +9,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 @RestController
 @RequestMapping(path="api")
 public class ControlerKviz {
     KvizMemorija memory;
+    KvizService kvizService;
+    @Autowired
+    public ControlerKviz(KvizService kvizService) {
+        this.kvizService = kvizService;
+    }
+    @GetMapping
+    public List<Pitanje>getPitanja(){
+        return kvizService.getPitanja();
+    }
 
     @GetMapping(path = "test")
     public String test() {
@@ -97,5 +108,8 @@ public class ControlerKviz {
             html+="<a href='/api/novikviz'>***Novi kviz***</a>";
         }
         return html;
+    }
+    public void test2(){
+        return ;
     }
 }
