@@ -109,7 +109,4 @@ public class ControlerKviz {
         }
         return html;
     }
-    public void test2(){
-        return ;
-    }
 }
