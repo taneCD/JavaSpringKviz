@@ -13,7 +13,7 @@ public class KvizService {
     public KvizService(KvizRepository kvizRepository) {
         this.kvizRepository = kvizRepository;
     }
-    public List<Pitanje> getPitanja(){
+    public List<PitanjeBaza> getPitanja(){
         return kvizRepository.findAll();
     }
 }

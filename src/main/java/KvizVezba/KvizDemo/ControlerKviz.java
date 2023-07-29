@@ -21,7 +21,7 @@ public class ControlerKviz {
         this.kvizService = kvizService;
     }
     @GetMapping
-    public List<Pitanje>getPitanja(){
+    public List<PitanjeBaza>getPitanja(){
         return kvizService.getPitanja();
     }
 
